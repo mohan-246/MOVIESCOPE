@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Diss from "./api/Discover";
 import { MovieList } from "./components/MovieList";
 import Popp from "./api/Popular";
@@ -16,12 +16,11 @@ function App() {
 
   let wo;
   useEffect(() => {
-    
     let wi = async () => {
       wo = await Diss();
-      
+
       setdisres(wo);
-      
+
       wo = await Popp();
       setpopres(wo);
       wo = await Topp();
@@ -32,11 +31,8 @@ function App() {
     wi();
   }, []);
   const handleSubmit = async (term) => {
-    
-
     wo = await Sear(term);
     setserres(wo);
-    
   };
 
   return (
@@ -44,9 +40,7 @@ function App() {
       {" "}
       <Header onsubmit={handleSubmit} />
       <div className=" w-full overflow-x-hidden list-container h-full  ">
-        {useEffect(() => {
-         
-        }, [disres, popres, topres, uppres])}
+        {useEffect(() => {}, [disres, popres, topres, uppres])}
         {serres.length > 1 && (
           <MovieList Topic="Search Results" List={serres} />
         )}
