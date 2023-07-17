@@ -22,7 +22,7 @@ export const MovieList = ({ Topic, List }) => {
         </Link> */}
       </div>
       <div
-        className="gap-2 list-container overflow-y-visible h-[405px] overflow-x-auto  space-x-2 flex"
+        className="gap-2 list-container overflow-y-visible h-[420px] overflow-x-auto  space-x-2 flex"
         ref={scrollRef}
       >
         {List.map((e) => (
