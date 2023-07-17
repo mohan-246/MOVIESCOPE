@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Movi from "../api/MovieId";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import Credi from "../api/Credits";
 import { CastList } from "./CastList";
+import OneApi from "../api/OneApi";
 
 export const Card = () => {
   let [Movie, setMovi] = useState({});
@@ -12,14 +11,16 @@ export const Card = () => {
   let wo;
   const param = useParams();
   const baseUrl = "https://image.tmdb.org/t/p/original";
+  const creditsUrl=`https://api.themoviedb.org/3/movie/${param.id}/credits?api_key=${import.meta.env.VITE_API_KEY}`
+  const movieUrl=`https://api.themoviedb.org/3/movie/${param.id}?api_key=${import.meta.env.VITE_API_KEY}`
   
   useEffect(() => {
     let wi = async () => {
-      wo = await Movi(param.id);
+      wo = await OneApi(movieUrl);
       
       setMovi(wo);
-      wo= await Credi(param.id)
-      setCast(wo)
+      wo= await OneApi(creditsUrl)
+      setCast(wo.cast)
     };
     wi();
   }, []);

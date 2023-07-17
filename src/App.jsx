@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
-import Diss from "./api/Discover";
 import { MovieList } from "./components/MovieList";
-import Popp from "./api/Popular";
-import Topp from "./api/TopRated";
-import Uppp from "./api/Upcoming";
 import { Header } from "./components/Header";
-import Sear from "./api/Search";
 import OneApi from "./api/OneApi";
 
 function App() {
@@ -18,6 +13,7 @@ function App() {
   const topratedUrl=`https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_API_KEY}`
   const popularUrl=`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}`
   const discoverUrl=`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}`
+  let searchUrl
 
   let wo;
   useEffect(() => {
@@ -36,8 +32,9 @@ function App() {
     wi();
   }, []);
   const handleSubmit = async (term) => {
-    wo = await Sear(term);
-    setserres(wo);
+    searchUrl=`https://api.themoviedb.org/3/search/movie?query=${term}&api_key=${import.meta.env.VITE_API_KEY}`
+    wo = await OneApi(searchUrl);
+    setserres(wo.results);
   };
 
   return (
