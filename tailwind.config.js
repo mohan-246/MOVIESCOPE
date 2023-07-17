@@ -5,7 +5,7 @@ export const content = ['./src/**/*.{js,jsx}'];
 export const theme = {
   extend: {
     screens: {
-      xs: '480px',
+      xs: '280px',
     },
     fontFamily: {
       inter: ['Inter var', 'sans-serif'],
