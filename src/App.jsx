@@ -6,6 +6,7 @@ import Topp from "./api/TopRated";
 import Uppp from "./api/Upcoming";
 import { Header } from "./components/Header";
 import Sear from "./api/Search";
+import OneApi from "./api/OneApi";
 
 function App() {
   const [disres, setdisres] = useState([]);
@@ -13,20 +14,24 @@ function App() {
   const [topres, settopres] = useState([]);
   const [uppres, setuppres] = useState([]);
   const [serres, setserres] = useState([]);
+  const upcomingUrl=`https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_API_KEY}`
+  const topratedUrl=`https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_API_KEY}`
+  const popularUrl=`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}`
+  const discoverUrl=`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}`
 
   let wo;
   useEffect(() => {
     let wi = async () => {
-      wo = await Diss();
+      wo = await OneApi(discoverUrl);
 
-      setdisres(wo);
+      setdisres(wo.results);
 
-      wo = await Popp();
-      setpopres(wo);
-      wo = await Topp();
-      settopres(wo);
-      wo = await Uppp();
-      setuppres(wo);
+      wo = await OneApi(popularUrl);
+      setpopres(wo.results);
+      wo = await OneApi(topratedUrl);
+      settopres(wo.results);
+      wo  = await OneApi(upcomingUrl);
+      setuppres(wo.results);
     };
     wi();
   }, []);
