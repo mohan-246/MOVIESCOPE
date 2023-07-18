@@ -3,8 +3,8 @@ import { MovieList } from "./components/MovieList";
 import { Header } from "./components/Header";
 import OneApi from "./api/OneApi";
 
-function App() {
-  const [disres, setdisres] = useState([]);
+export default function App() {
+  const [disres, setdisres] = useState([]); 
   const [popres, setpopres] = useState([]);
   const [topres, settopres] = useState([]);
   const [uppres, setuppres] = useState([]);
@@ -13,7 +13,7 @@ function App() {
   const topratedUrl=`https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_API_KEY}`
   const popularUrl=`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}`
   const discoverUrl=`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}`
-  let searchUrl
+  let searchUrl,searchTerm
 
   let wo;
   useEffect(() => {
@@ -32,6 +32,7 @@ function App() {
     wi();
   }, []);
   const handleSubmit = async (term) => {
+    searchTerm=term
     searchUrl=`https://api.themoviedb.org/3/search/movie?query=${term}&api_key=${import.meta.env.VITE_API_KEY}`
     wo = await OneApi(searchUrl);
     setserres(wo.results);
@@ -55,4 +56,3 @@ function App() {
   );
 }
 
-export default App;

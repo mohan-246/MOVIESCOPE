@@ -33,7 +33,7 @@ export const Card = () => {
       <div className="h-full ">
         <div className="mix-blend-multiply relative top-0  h-100 w-200 bg-slate-700 ">
           <img
-            className="mix-blend-multiply relative top-0 h-full w-full"
+            className="mix-blend-multiply relative top-0 w-full"
             src={baseUrl.concat(Movie.backdrop_path)}
           />
         </div>
@@ -42,7 +42,7 @@ export const Card = () => {
           src={baseUrl.concat(Movie.poster_path)}
         />
         <div className="absolute top-[5%] mx-3 left-[35%] text-white font-mono font">
-          <p className="font-extrabold xs:text-xs uppercase sm:text-xl lg:text-5xl">{Movie.title}</p>
+          <p className="font-extrabold xs:text-xs sm:text-xl uppercase ">{Movie.title}</p>
           <div className="flex xs:text-[8px]  sm:text-md lg:text-xl xs:gap-1 sm:gap-3">
             <FontAwesomeIcon className="sm:mt-4 xs:mt-3 text-red-600" icon={faHeart} />
             <p className="mt-3">

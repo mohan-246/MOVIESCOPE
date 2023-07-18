@@ -17,7 +17,7 @@ export const CastList = ({ Topic, List,MovId }) => {
       <div className="gap-2 list-container overflow-y-visible h-[405px] overflow-x-auto  space-x-2 flex" ref={scrollRef}>
       
         {List.map((c) => (
-        <Link key={c.id} to={`/Details/${MovId}`}>{c.profile_path && <CastCard key={c.id} id={c.id} poster={c.profile_path} item={c}  />}</Link> 
+          c.profile_path && <Link key={c.id} to={`/Details/${MovId}`}><CastCard key={c.id} id={c.id} poster={c.profile_path} item={c}  /></Link>
         ))}
         
       </div>
