@@ -14,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/" element={<App />} />
       <Route path="/Details/:id" element={<Card />} />
       <Route path="More/:topic" element={<More />}/>
+      <Route path="More/:topic/:term" element={<More />}/>
     </Routes>
   </BrowserRouter>
   //</React.StrictMode>,
