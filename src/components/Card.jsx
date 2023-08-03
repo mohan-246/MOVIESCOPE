@@ -51,7 +51,7 @@ export const Card = () => {
   return (
     <div className="bg-slate-50">
       <div className="h-full ">
-        <div className="mix-blend-multiply relative top-0 w-[100vw] sm:h-[100vh] xs:h-[221px] h-100 w-200 bg-slate-700 ">
+        <div className="mix-blend-multiply relative top-0 w-full h-auto bg-slate-700 ">
         
          {Movie.backdrop_path && <img
             className="mix-blend-multiply relative top-0 w-full"
