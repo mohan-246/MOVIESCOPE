@@ -59,8 +59,8 @@ export const More = () => {
   };
 
   return (
-    <div className="container mx-auto pt-3 bg-slate-50">
-      <div className="flex flex-wrap justify-around gap-3 bg-slate-50">
+    <div className="  mx-0 pt-3 bg-slate-50">
+      <div className="flex flex-wrap  justify-around gap-3 bg-slate-50">
         {more.map(
           (e) =>
             e.poster_path && (
@@ -78,7 +78,7 @@ export const More = () => {
       <div className="justify-center w-full my-2 flex">
         <button
           onClick={handleLoadMore}
-          className="rounded-lg bg-slate-900 text-white w-full font-mono font-extrabold text-2xl"
+          className="rounded-lg bg-slate-900 text-white w-full font-mono font-extrabold sm:text-2xl xs:text-xs xs:p-2"
         >
           Load More
         </button>

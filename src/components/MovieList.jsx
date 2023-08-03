@@ -12,18 +12,18 @@ export const MovieList = ({ Topic, List,Term }) => {
   return (
     <div className=" relative" id="scrollable-list">
       <div className="flex justify-between">
-        <p className="text-xl  font-extrabold  font-mono uppercase mx-4 my-5">
+        <p className="sm:text-xl xs:text-md  font-extrabold  font-mono uppercase sm:mx-4 sm:my-5 xs:my-3 xs:mx-2">
           {Topic}
         </p>
         {Topic === "Search Results" ? (
           <Link to={`/More/${Topic}/${Term}`}>
-            <p className="text-sm p-1 font-bold  font-mono uppercase mx-4 my-5">
+            <p className="text-sm sm:p-1 xs:p-[2px] font-bold  font-mono uppercase sm:mx-4 sm:my-5 xs:mx-2 xs:my-3">
               More <FontAwesomeIcon className="text-sm " icon={faAngleRight} />
             </p>
           </Link>
         ) : (
           <Link to={`/More/${Topic}`}>
-            <p className="text-sm p-1 font-bold  font-mono uppercase mx-4 my-5">
+            <p className="text-sm  sm:p-1 xs:p-[2px] font-bold  font-mono uppercase sm:mx-4 sm:my-5 xs:mx-2 xs:my-3">
               More <FontAwesomeIcon className="text-sm " icon={faAngleRight} />
             </p>
           </Link>
@@ -31,7 +31,7 @@ export const MovieList = ({ Topic, List,Term }) => {
       </div>
       <div className="flex flex-row relative">
         <div
-          className="gap-2 list-container  h-[425px] overflow-x-auto  space-x-2 flex"
+          className="gap-2 list-container sm:h-[425px] overflow-x-auto xs:h-[213px] space-x-2 flex"
           // ref={scrollRef}
           id="scrollContainer"
         >

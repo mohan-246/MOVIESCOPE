@@ -51,17 +51,18 @@ export const Card = () => {
   return (
     <div className="bg-slate-50">
       <div className="h-full ">
-        <div className="mix-blend-multiply relative top-0  h-100 w-200 bg-slate-700 ">
-          <img
+        <div className="mix-blend-multiply relative top-0 w-[100vw] sm:h-[100vh] xs:h-[221px] h-100 w-200 bg-slate-700 ">
+        
+         {Movie.backdrop_path && <img
             className="mix-blend-multiply relative top-0 w-full"
             src={baseUrl.concat(Movie.backdrop_path)}
-          />
+          />}
         </div>
         <img
-          className="absolute float-left rounded-lg mx-5 w-[30%] h-auto top-[5%] "
+          className="absolute float-left rounded-lg mx-5 w-[30%] h-auto sm:top-[5%] xs:top-[3%]"
           src={baseUrl.concat(Movie.poster_path)}
         />
-        <div className="absolute top-[5%] mx-3 left-[35%] text-white font-mono font">
+        <div className="absolute sm:top-[5%] xs:top-[3%] mx-3 left-[35%] text-white font-mono font">
           <p className="font-extrabold xs:text-xs sm:text-xl uppercase ">
             {Movie.title}
           </p>
@@ -90,7 +91,7 @@ export const Card = () => {
         <div className="justify-center w-full my-2 flex">
           <button
             onClick={handleLoadMore}
-            className="rounded-lg bg-slate-900 text-white w-full font-mono font-extrabold text-2xl"
+            className="rounded-lg bg-slate-900 text-white w-full font-mono font-extrabold sm:text-2xl xs:text-xs xs:p-2"
           >
             Load More
           </button>

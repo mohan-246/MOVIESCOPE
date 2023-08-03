@@ -7,7 +7,7 @@ export const Header = ({ onSubmit }) => {
     <div id="header-container" className="bg-slate-900 h-[70px]">
    
       <a
-        className="float-left font-sans text-white h-8 uppercase  text-3xl font-extrabold m-4"
+        className="float-left font-sans text-white h-8 uppercase text-3xl  font-extrabold m-4"
         href="/#"
       >
         MovieScope
