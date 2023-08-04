@@ -5,6 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { CastList } from "./CastList";
 import OneApi from "../api/OneApi";
 import { MovieReview } from "./MovieReview";
+import { document } from "postcss";
 
 export const Card = () => {
   const [Movie, setMovie] = useState({});
@@ -23,6 +24,8 @@ export const Card = () => {
   const reviewUrl = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${
     import.meta.env.VITE_API_KEY
   }&page=${page}`;
+  let bgClasses="mix-blend-multiply relative top-0 bg-slate-700"
+  Movie.backdrop_path?bgClasses+=" h-auto" : bgClasses+=" sm:h-[100vh]"
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +54,7 @@ export const Card = () => {
   return (
     <div className="bg-slate-50">
       <div className="h-full ">
-        <div className="mix-blend-multiply relative top-0 w-full h-auto bg-slate-700 ">
+        <div id="poster-bg" className={bgClasses}>
         
          {Movie.backdrop_path && <img
             className="mix-blend-multiply relative top-0 w-full"
