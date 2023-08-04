@@ -25,7 +25,7 @@ export const Card = () => {
     import.meta.env.VITE_API_KEY
   }&page=${page}`;
   let bgClasses="mix-blend-multiply relative top-0 bg-slate-700"
-  Movie.backdrop_path?bgClasses+=" h-auto" : bgClasses+=" sm:h-[100vh]"
+  Movie.backdrop_path?bgClasses+=" h-auto" : bgClasses+=" sm:h-[100vh] xs:h-[221px]"
 
   useEffect(() => {
     const fetchData = async () => {
