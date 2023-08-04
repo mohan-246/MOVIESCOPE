@@ -31,7 +31,7 @@ export const MovieList = ({ Topic, List,Term }) => {
       </div>
       <div className="flex flex-row relative">
         <div
-          className="gap-2 list-container sm:h-[425px] overflow-x-auto xs:h-[213px] space-x-2 flex"
+          className="gap-2 list-container sm:h-[430px] overflow-x-auto xs:h-[215px] space-x-2 flex"
           // ref={scrollRef}
           id="scrollContainer"
         >
