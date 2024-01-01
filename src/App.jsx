@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MovieList } from "./components/MovieList";
 import { Header } from "./components/Header";
 import OneApi from "./api/OneApi";
+import Lenis from '@studio-freight/lenis'
 
 export default function App() {
   const [movieLists, setMovieLists] = useState({
@@ -57,18 +58,18 @@ export default function App() {
       console.error("Error fetching search results:", error);
     }
   };
-  const lenis = new Lenis();
+  const lenis = new Lenis()
 
-  lenis.on("scroll", (e) => {
-    console.log(e);
-  });
-
+  lenis.on('scroll', (e) => {
+    // console.log(e)
+  })
+  
   function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
+    lenis.raf(time)
+    requestAnimationFrame(raf)
   }
-
-  requestAnimationFrame(raf);
+  
+  requestAnimationFrame(raf)
    return (
     <div className="bg-slate-50">
       <Header onSubmit={handleSubmit} />

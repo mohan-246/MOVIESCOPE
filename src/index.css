@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .list-container::-webkit-scrollbar {
-   width: 5px; /* Hide the default scrollbar in WebKit browsers */
+   width: 0px; /* Hide the default scrollbar in WebKit browsers */
   }
 .list-container {
     -ms-overflow-style: none;  /* IE and Edge */
@@ -15,7 +15,7 @@
   border: solid 3px transparent;
 }
 .list-container::-webkit-scrollbar-thumb{
-background-color: #1e293b;
+background-color: transparent;
 border-radius: 5px;
 border: solid 3px transparent;
 }
