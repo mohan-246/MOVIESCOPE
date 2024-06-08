@@ -15,7 +15,7 @@ export const Card = () => {
 
   const { id } = useParams();
   const baseUrl = "https://image.tmdb.org/t/p/w1280";
-  const posterUrl = "https://image.tmdb.org/t/p/w342"
+  const posterUrl = "https://image.tmdb.org/t/p/w500"
   const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${
     import.meta.env.VITE_API_KEY
   }`;
