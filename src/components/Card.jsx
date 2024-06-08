@@ -14,7 +14,8 @@ export const Card = () => {
   const [page, setPage] = useState(1);
 
   const { id } = useParams();
-  const baseUrl = "https://image.tmdb.org/t/p/original";
+  const baseUrl = "https://image.tmdb.org/t/p/w1280";
+  const posterUrl = "https://image.tmdb.org/t/p/w342"
   const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${
     import.meta.env.VITE_API_KEY
   }`;
@@ -63,7 +64,7 @@ export const Card = () => {
         </div>
         <img
           className="absolute float-left rounded-lg mx-5 w-[30%] h-auto sm:top-[5%] xs:top-[3%]"
-          src={baseUrl.concat(Movie.poster_path)}
+          src={posterUrl.concat(Movie.poster_path)}
         />
         <div className="absolute sm:top-[5%] xs:top-[3%] mx-3 left-[35%] text-white font-mono font">
           <p className="font-extrabold xs:text-xs sm:text-xl uppercase ">
